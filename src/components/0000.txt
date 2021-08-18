@@ -1,0 +1,48 @@
+var item = {
+    id: 1,
+    name: 'Chicken Thali',
+    is_veg : 0,
+    customizations: {
+        cereal: ['Rice', 'Roti'],
+        chicken: ['Local', 'Broiler'],
+        subscription: [1,7,15,30],
+        meal_type: ['Lunch', 'Dinner'],
+    },
+    prices: {
+        'subscription.1' : 100,
+        'subscription.7' : 70,
+        'subscription.15' : 70,
+        'subscription.30' : 70,
+        'meal_type.Lunch' : 0,
+        'meal_type.Dinner' : 0,
+        'cereal.Rice': 0,
+        'cereal.Roti': 0,
+        'chicken.Local': 20,
+        'chicken.Broiler': 0
+    },
+    categories: {category:'Tiffin Service'},{category:'Mom's Axomia Jalpan'}
+    avaialable: 1
+}
+
+var user = {
+  product_id:1,
+  customization: {
+    cereal: 'Rice',
+    chicken: 'Boiler',
+    subscription: 7,
+    meal_type: 'lunch',
+  }  
+}
+
+
+function price(){
+  let p = 0;
+  for(let key in user.customization){
+      p += item.prices[key+'.'+user.customization[key]]
+  }
+  return p;
+}
+
+
+console.log(price())
+

@@ -42,7 +42,7 @@ export const getLocation = (callback) => {
 
 // get address from coords
 export const getAddressFromCoords = async (region, callback) => {
-  Geocoder.init('AIzaSyBDEalZVkuc7mP01saLwYpYfQs2kO2m9ks');
+  Geocoder.init('');
   Geocoder.from(region.latitude, region.longitude)
     .then((json) => {
       var addressComponent = json.results[0].formatted_address;

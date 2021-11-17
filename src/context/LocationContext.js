@@ -20,7 +20,7 @@ const LocationContextProvider = (props) => {
   const [userCoords, setUserCoords] = useState(null);
   const [location, setLocation] = useState(null);
   const [deliveryMsg, setDeliveryMsg] = useState(null);
-  Geocoder.init('AIzaSyBDEalZVkuc7mP01saLwYpYfQs2kO2m9ks');
+  Geocoder.init('');
 
   useEffect(() => {
     requestLocationPermission();
